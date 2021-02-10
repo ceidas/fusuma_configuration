@@ -1,0 +1,94 @@
+# Date: 2020
+# Author: E. Petrai
+# Description: Multitouch gestures configuration for  iberianpig /fusuma 
+# This configuaration is for Ubuntu 20.04 - runs great on XPS 7590
+swipe:
+  3: # three fingers swipe
+    left:
+      command: 'xdotool key alt+Left' # Back
+    right:
+      command: 'xdotool key alt+Right' # Forward
+    up:
+      command: 'xdotool key Control_L+Page_Up' # Switch to the next left tab on Chrome/Opera browser
+      keypress:
+        LEFTSHIFT:
+          command: 'xdotool key --clearmodifiers ctrl+shift+t' # Open last closed tab
+    down:
+      command: 'xdotool key Control_L+Page_Down' # Switch to the next right tab on Chrome/Opera browser
+      keypress:
+        LEFTSHIFT:
+          command: 'xdotool key --clearmodifiers ctrl+w' # Close tab
+  4: # four fingers swipe
+    left:
+      command: 'xdotool key --clearmodifiers super+Left' # Move window to left side
+    right:
+      command: 'xdotool key --clearmodifiers super+Right'  # Move window to right side
+    up:
+      command: 'xdotool key --clearmodifiers super+Up' # Workspace overview
+      keypress:
+        LEFTMETA:
+          window:
+            maximized: 'toggle' # Toggle Maximize/Unmaximize Window
+    down:
+      command: 'xdotool key --clearmodifiers super+Down' # Window overview
+      
+pinch:
+  2: #two fingers pinch
+    in:
+      command: 'xdotool keydown ctrl click 4 keyup ctrl' # Zoom in
+    out:
+      command: 'xdotool keydown ctrl click 5 keyup ctrl' # Zoom out
+  3: #three fingers pinch 
+    in:
+      command: 'xdotool key XF86MonBrightnessUp' # Brightness up
+    out:
+      command: 'xdotool key XF86MonBrightnessDown' # Brightness down
+  4: #three fingers pinch
+    in:
+      command: 'xdotool key super+s' # Workspace overview
+    out:
+      command: 'xdotool key super+a' # Window overview
+
+rotate:
+  2:  #two fingers rotate
+    clockwise:
+      command: 'xdotool key Control_L+Page_Down' # Switch between browsers tabs
+    counterclockwise:
+      command: 'xdotool key Control_L+Page_Up' #
+  3: #three fingers rotate
+    clockwise:
+      command: 'xdotool key XF86AudioRaiseVolume' # Raise volume
+    counterclockwise:
+      command: 'xdotool key XF86AudioLowerVolume' # Reduce volume
+  4: # four fingers rotate 
+    clockwise:
+      command: 'xdotool key super+h' # Minimize tabs
+    counterclockwise:
+      command: 'xdotool key super+h' #Minimize tabs
+  
+# threshold: 
+#   swipe: 0.4
+#   pinch: 0.4
+
+# interval:  
+#   swipe: 0.8
+#   pinch: 0.1
+#   command: 'xdotool key XF86AudioRaiseVolume' #
+#   command: 'xdotool key XF86AudioLowerVolume' #
+#   clockwise:
+#   command: 'xdotool key Control_L+Page_Up' # Brightness up
+#   counterclockwise:
+#   command: 'xdotool key Control_L+Page_Down' #
+#3:
+#   clockwise:
+#   command: 'xdotool key XF86MonBrightnessUp' # Brightness up
+#   counterclockwise:
+#   command: 'xdotool key XF86MonBrightnessDown' # Brightness down
+
+
+plugin: 
+  inputs:
+    libinput_command_input: # options for lib/plugin/inputs/libinput_command_input
+      enable-tap: true # click to tap
+      enable-dwt: true # disable tap while typing
+      #show-keycode: true # https://github.com/iberianpig/fusuma-plugin-keypress#add-show-keycode-option
