@@ -1,6 +1,6 @@
 # Date: 2020
 # Author: E. Petrai
-# Description: Multitouch gestures configuration for  iberianpig /fusuma 
+# Description: Multitouch gestures configuration for  iberianpig /fusuma (https://github.com/iberianpig/fusuma)
 # This configuaration is for Ubuntu 20.04 - runs great on XPS 7590
 swipe:
   3: # three fingers swipe
